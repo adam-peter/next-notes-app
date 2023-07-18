@@ -29,20 +29,21 @@ const CreateNote = () => {
 
   return (
     <div className="mt-4">
-      <h1 className="text-xl font-bold">Create a new Note</h1>
-      <form onSubmit={createNote} className="flex flex-col">
+      <h1 className="text-xl">Create a new Note</h1>
+      <form onSubmit={createNote} className="flex flex-col gap-1">
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-1/2 border border-slate-600"
+          className="w-3/12 bg-slate-50"
         />
         <textarea
           placeholder="Content"
+          
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-1/2 border border-slate-600"
+          className="w-3/12 bg-slate-50 resize-none"
         />
         <button type="submit" className="w-max bg-slate-600 p-2 text-white">
           Create note

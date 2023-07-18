@@ -31,11 +31,11 @@ const NotesPage = async () => {
 
   return (
     <div>
-      <h1>Notes</h1>
+      <h1 className="mx-auto w-max text-2xl">Notes</h1>
+      <CreateNote />
       <div className="grid grid-flow-col grid-rows-2 gap-2">
         {notes?.map((note) => <Note key={note.id} note={note} />)}
       </div>
-      <CreateNote />
     </div>
   );
 };
