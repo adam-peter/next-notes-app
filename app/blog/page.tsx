@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Button from "@/components/Button";
 
 const getPosts = async () => {
   const res = await fetch(
@@ -16,14 +17,27 @@ const getPosts = async () => {
 const Blog = async () => {
   const posts = await getPosts();
 
+  const handleWriteNewBlogpost = () => {};
+
   return (
     <div>
       <h1 className="mx-auto w-max text-2xl">Blog</h1>
-      {posts.map((post: any) => (
-        <Link key={post.id} href={`blog/${post.id}`} className="px-4 py-2 bg-slate-200">
-          {post.title}
+      <div className="flex justify-between">
+        <div className="grid grid-cols-6 gap-2">
+          {posts.map((post: any) => (
+            <Link
+              key={post.id}
+              href={`blog/${post.id}`}
+              className="bg-slate-200 px-4 py-2"
+            >
+              {post.title}
+            </Link>
+          ))}
+        </div>
+        <Link href="/newPost" className="rounded bg-blue-400 p-2">
+          Write new Blogpost
         </Link>
-      ))}
+      </div>
     </div>
   );
 };
