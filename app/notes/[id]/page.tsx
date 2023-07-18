@@ -4,8 +4,6 @@ const getNote = async (noteId: string) => {
   //retrieves individual item from database based on its id
   //this is a dynamic route - wont cache every request; we still customize it - add Incremental Static Regeneration after 10 secs
   
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
   const res = await fetch(
     `http://127.0.0.1:8090/api/collections/notes/records/${noteId}`,
     { next: { revalidate: 10 } },

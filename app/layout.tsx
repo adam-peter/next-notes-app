@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/notes">Notes</Link>
+        <nav className="flex gap-2 p-2">
+          <Link href="/" className="p-2 bg-blue-400 rounded">Home</Link>
+          <Link href="/notes" className="p-2 bg-blue-400 rounded">Notes</Link>
+          <Link href="/blog" className="p-2 bg-blue-400 rounded">Blog</Link>
         </nav>
         {children}
       </body>
